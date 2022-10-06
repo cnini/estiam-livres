@@ -1,0 +1,26 @@
+{% extends 'layout.twig' %}
+
+{% block title %}{{ livre.title }}{% endblock %}
+
+{% block body %}
+
+  <section class="container p-2 w-50 d-flex">
+    <img src="{{ livre.imageLink }}" alt="">
+
+    <div class="ms-3">
+      <h1>{{ livre.title }}</h1>
+
+      <ul>
+        <li>Author : {{ livre.author }}</li>
+        <li>Year : {{ livre.year }}</li>
+        <li>Pages : {{ livre.pages }}</li>
+        <li>Country : {{ livre.country }}</li>
+        <li>Language : {{ livre.language }}</li>
+      </ul>
+
+      <a href="{{ livre.link }}">En savoir plus...</a>
+    </div>
+  </section>
+
+  
+{% endblock %}

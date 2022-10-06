@@ -1,0 +1,36 @@
+{% extends 'layout.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+  <section class="container-fluid p-2">
+    <h1>{{ title }} <strike>ever</strike></h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Year</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for livre in livres %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ livre.title }}</td>
+          <td>{{ livre.author }}</td>
+          <td>{{ livre.year }}</td>
+          <td><a href="/{{ (loop.index) }}" class="card-link">Détails</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
+  </section>
+
+  
+{% endblock %}
